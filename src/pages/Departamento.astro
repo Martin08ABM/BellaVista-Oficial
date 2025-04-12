@@ -1,23 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
 ---
+
 <Layout title="Departamento BellaVista - ¿Qué hay en el departamento?">
     <div class="w-full h-auto flex justify-center items-center p-2">
         <div class="border-2 border-black rounded-2xl p-4 sm:p-6 mt-4 w-[95%] sm:w-[90%] md:w-[80%]">
             <h1 class="text-black text-xl sm:text-2xl font-bold mb-2 text-center md:text-left">
                 ¿Qué hay en el departamento?
             </h1>
-            <div class="flex flex-col md:flex-row">
-                <p class="text-black text-[14px] sm:text-[15px] md:text-[16px] font-medium md:w-[60%] text-center md:text-left">
-                    El departamento cuenta con una suite pricipal con baño privado y otra habitación. Bella Vista está equipado con dos baños, el baño privado de la suite y un baño de visitas. También tiene una sala-comedor y cocina completamente equipados.
-                </p>
-            </div>
+            <p class="text-black text-[14px] sm:text-[15px] md:text-[16px] font-medium text-center md:text-left">
+                El departamento cuenta con una suite principal con baño privado y otra habitación. Bella Vista está equipado con dos baños, el baño privado de la suite y un baño de visitas. También tiene una sala-comedor y cocina completamente equipados.
+            </p>
         </div>
     </div>
+
     <h1 class="text-black text-2xl sm:text-3xl font-bold mt-6 mx-auto text-center sm:text-left sm:ml-6">
         Partes del departamento:
     </h1>
-    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-[60%_40%] p-4 sm:p-6 md:p-8 lg:p-10 mt-2 sm:mt-0 md:mt-[-1rem] gap-4 w-full max-w-7xl mx-auto">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[60%_40%] p-4 sm:p-6 md:p-8 lg:p-10 mt-2 sm:mt-0 md:mt-[-1rem] gap-4 w-full max-w-7xl mx-auto">
         <div class="border-2 border-black rounded-2xl p-4 sm:p-6">
             <h1 class="text-black text-xl sm:text-2xl font-bold mb-2 text-center md:text-left">
                 SALA-COMEDOR:
@@ -32,6 +33,7 @@ import Layout from "../layouts/Layout.astro";
                 <img src="/Images/FotosDepartamento/comedor.webp" class="w-full sm:w-60 h-auto rounded-2xl mx-auto sm:mx-0 mt-4 sm:mt-0" alt="Vista del comedor">
             </div>
         </div>
+
         <div class="border-2 border-black rounded-2xl p-4 sm:p-6">
             <h1 class="text-black text-xl sm:text-2xl font-bold mb-2 text-center md:text-left">
                 COCINA:
@@ -44,7 +46,8 @@ import Layout from "../layouts/Layout.astro";
             </div>
         </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 p-4 sm:p-6 md:p-8 lg:p-10 mt-0 sm:mt-[-1rem] md:mt-[-3rem] gap-4 sm:gap-6 w-full max-w-7xl mx-auto">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 p-4 sm:p-6 md:p-8 lg:p-10 mt-0 sm:mt-[-1rem] md:mt-[-3rem] gap-4 sm:gap-6 w-full max-w-7xl mx-auto">
         <div class="border-2 border-black rounded-2xl p-4 sm:p-6">
             <h1 class="text-black text-xl sm:text-2xl font-bold mb-2 text-center md:text-left">
                 SUITE:
@@ -57,6 +60,7 @@ import Layout from "../layouts/Layout.astro";
                 <img src="/Images/FotosDepartamento/suite.webp" class="w-full sm:w-60 h-auto rounded-2xl" alt="Vista de la suite">
             </div>
         </div>
+
         <div class="border-2 border-black rounded-2xl p-4 sm:p-6 md:ml-0 lg:ml-5">
             <h1 class="text-black text-xl sm:text-2xl font-bold mb-2 text-center md:text-left">
                 HABITACIÓN:
@@ -69,6 +73,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
         </div>
     </div>
+
     <div class="grid grid-cols-1 p-4 sm:p-6 md:p-8 lg:p-10 mt-0 sm:mt-[-1rem] md:mt-[-3rem] w-full max-w-7xl mx-auto">
         <div class="border-2 border-black rounded-2xl p-4 sm:p-6">
             <h1 class="text-black text-xl sm:text-2xl font-bold mb-2 text-center md:text-left">
@@ -82,4 +87,114 @@ import Layout from "../layouts/Layout.astro";
             </div>
         </div>
     </div>
+
+    <div class="w-full flex justify-center my-8">
+        <button id="openModalBtn" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center">
+            <span class="mr-2">Ver información adicional</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h-01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </button>
+    </div>
+
+    <div id="infoModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-3/4 lg:w-1/2 max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center border-b pb-3">
+                    <h3 class="text-xl font-bold text-gray-900">Información adicional sobre el departamento</h3>
+                    <button id="closeModalBtn" class="text-gray-400 hover:text-gray-500">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="mt-4">
+                    <h4 class="text-lg font-semibold mb-2">Servicios incluidos</h4>
+                    <ul class="list-disc pl-5 mb-4">
+                        <li>WiFi de alta velocidad</li>
+                        <li>Televisión con Netflix y Prime Video</li>
+                        <li>Agua caliente 24/7</li>
+                        <li>Cocina completamente equipada</li>
+                        <li>Ropa de cama y toallas</li>
+                        <li>Artículos de aseo básicos</li>
+                    </ul>
+
+                    <h4 class="text-lg font-semibold mb-2">Normas del departamento</h4>
+                    <ul class="list-disc pl-5 mb-4">
+                        <li>No se permiten fiestas</li>
+                        <li>No se permite fumar</li>
+                        <li>Check-in: 14:00 - 20:00</li>
+                        <li>Check-out: 12:00</li>
+                        <li>Máximo 4 personas</li>
+                    </ul>
+
+                    <h4 class="text-lg font-semibold mb-2">Información de interés</h4>
+                    <p class="mb-4">
+                        El departamento se encuentra en una zona segura y tranquila, con vigilancia 24/7. Está a 15 minutos caminando del centro de la ciudad y a 5 minutos de la parada de autobús más cercana.
+                    </p>
+                    <p>
+                        Para cualquier consulta adicional, no dude en contactarnos por teléfono o correo electrónico.
+                    </p>
+                </div>
+            </div>
+            <div class="bg-gray-50 px-6 py-3 flex justify-end rounded-b-lg">
+                <button id="closeModalBtnBottom" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const openModalBtn = document.getElementById('openModalBtn');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const closeModalBtnBottom = document.getElementById('closeModalBtnBottom');
+            const modal = document.getElementById('infoModal');
+
+            if (modal) {
+                modal.style.display = 'none';
+            }
+
+            function openModal() {
+                if (modal) {
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            function closeModal() {
+                if (modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+
+            if (openModalBtn) {
+                openModalBtn.addEventListener('click', openModal);
+            }
+
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', closeModal);
+            }
+
+            if (closeModalBtnBottom) {
+                closeModalBtnBottom.addEventListener('click', closeModal);
+            }
+
+            if (modal) {
+                modal.addEventListener('click', (event) => {
+                    if (event.target === modal) {
+                        closeModal();
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && modal && modal.style.display === 'flex') {
+                    closeModal();
+                }
+            });
+        };
+    </script>
 </Layout>
